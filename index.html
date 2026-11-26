@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spot vs Perp — Crypto Market Live</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <div>
+    <h1>SPOT <span class="vs">vs</span> PERP</h1>
+    <p class="sub">Crypto market live — harga spot vs perpetual futures (Binance)</p>
+  </div>
+  <div class="status">
+    <span id="live-dot" class="dot off"></span>
+    <span id="status-text">Menghubungkan…</span>
+    <span id="clock"></span>
+  </div>
+</header>
+
+<section class="cards" id="summary-cards"></section>
+
+<main>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Koin</th>
+          <th class="num">Spot</th>
+          <th class="num">Perp</th>
+          <th class="num">Premium</th>
+          <th class="num">24j Spot</th>
+          <th class="num">24j Perp</th>
+          <th class="num">Funding</th>
+          <th class="num">Funding berikut</th>
+          <th class="num">Open Interest</th>
+        </tr>
+      </thead>
+      <tbody id="rows">
+        <tr><td colspan="9" class="loading">Memuat harga live…</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="hint">Klik baris koin untuk lihat grafik 1 jam. Data refresh otomatis tiap 5 detik.</p>
+</main>
+
+<section id="chart-panel" class="hidden">
+  <div class="chart-head">
+    <h2 id="chart-title">—</h2>
+    <button id="chart-close" title="Tutup">✕</button>
+  </div>
+  <canvas id="chart" width="900" height="260"></canvas>
+  <p class="chart-note">Grafik 1 jam, 100 candle terakhir (harga spot). Klik baris koin lain untuk ganti.</p>
+</section>
+
+<footer>
+  <p>Data: Binance Public API (utama) + OKX Public API (cadangan otomatis kalau Binance tidak bisa dijangkau). Bukan saran trading.</p>
+  <p><a href="https://github.com/Kuyang300/crypto-spot-perp-market">github.com/Kuyang300/crypto-spot-perp-market</a></p>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>
